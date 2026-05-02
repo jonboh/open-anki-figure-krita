@@ -1,4 +1,6 @@
 {
   "krita": "krita",
-  "open_editor": false
+  "open_editor": false,
+  "new_figure_width": 600,
+  "new_figure_height": 600
 }

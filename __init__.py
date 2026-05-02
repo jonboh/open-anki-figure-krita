@@ -117,7 +117,9 @@ def open_figure(note_id):
         filepath = os.path.join(media_dir, filename)
 
         if create_new:
-            _create_blank_png(filepath)
+            width = config.get("new_figure_width", 600)
+            height = config.get("new_figure_height", 600)
+            _create_blank_png(filepath, width=width, height=height)
 
         # Add img tag to the note only when inserting a brand-new reference
         add_img_tag_to_note(note, filename)
@@ -165,7 +167,7 @@ def _png_chunk(tag, data):
     )
 
 
-def _create_blank_png(filepath, width=100, height=100):
+def _create_blank_png(filepath, width=600, height=600):
     """Create a fully transparent RGBA PNG of the given size using only stdlib."""
     signature = b"\x89PNG\r\n\x1a\n"
 
