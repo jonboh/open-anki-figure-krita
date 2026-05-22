@@ -21,8 +21,11 @@ def find_png_images(note):
 
 
 def open_in_krita(filepath):
+    config = mw.addonManager.getConfig(__name__)
+    executable = config.get("krita", "krita")
+    extra_args = config.get("krita_args", [])
     subprocess.Popen(
-        ["krita", filepath],
+        [executable] + list(extra_args) + [filepath],
         stdin=None,
         stdout=None,
         stderr=None,

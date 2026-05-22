@@ -5,6 +5,8 @@ Opens PNG figures embedded in an Anki card directly in Krita.
 ## Config options
 
 - `krita`: path or executable name for Krita (default: `"krita"`)
+- `krita_args`: list of extra command-line arguments passed to Krita before the filename (default: `[]`).
+  Example: `["--nosplash", "--canvasonly", "--workspace", "MyWorkspace"]`
 - `open_editor`: if `true`, the Anki card browser is opened (or focused) after triggering the action (default: `false`)
 - `new_figure_width`: pixel width of a newly created blank PNG (default: `600`)
 - `new_figure_height`: pixel height of a newly created blank PNG (default: `600`)
